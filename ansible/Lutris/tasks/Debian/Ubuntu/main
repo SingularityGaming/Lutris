@@ -1,8 +1,11 @@
 ---
-- name: Install 
-  ansible.builtin.dnf:
-    name:
-      - httpd
-      - mariadb-server
-    state: latest
+- name: PPA
+  ansible.builtin.apt_repository:
+    repo: ppa:lutris-team/lutris
+  become: true
+
+- name: Install a list of packages
+  ansible.builtin.apt:
+    pkg:
+    - lutris
   become: true
