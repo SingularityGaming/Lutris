@@ -1,8 +1,7 @@
 ---
-- name: Install 
+- name: install Lutris
   ansible.builtin.dnf:
     name:
-      - httpd
-      - mariadb-server
+      - lutris
     state: latest
   become: true
